@@ -1,0 +1,36 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.banner-image {
+  height: 200px;
+  width: 92%;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.notes-input {
+  border-radius: 10px;
+  padding: 10px;
+  font-family: "Calibri";
+  color: blueviolet;
+  font-size: 18px;
+  font-weight: 600;
+}
+.add-button {
+  padding: 10px 15px 10px 15px;
+  background-color: blueviolet;
+  color: azure;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+.list-of-notes {
+  width: 100%;
+  padding-left: 0;
+  list-style-type: none;
+}

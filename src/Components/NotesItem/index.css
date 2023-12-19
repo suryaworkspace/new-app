@@ -1,0 +1,8 @@
+.note-item {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  box-shadow: 0px 8px 20px rgb(156, 120, 120);
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
