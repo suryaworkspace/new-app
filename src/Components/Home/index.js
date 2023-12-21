@@ -8,6 +8,10 @@ class Home extends Component {
     newNote: "",
     notesData: [],
   };
+  componentDidMount() {
+    const savedData = localStorage.getItem("savedNotes");
+    this.setState({ notesData: JSON.parse(savedData) });
+  }
 
   updateStateInput = (event) => {
     this.setState({ newNote: event.target.value });
@@ -25,29 +29,45 @@ class Home extends Component {
     }
   };
 
+  saveData = () => {
+    const { notesData } = this.state;
+    localStorage.setItem("savedNotes", JSON.stringify(notesData));
+  };
+
+  deleteNote = (id) => {
+    const { notesData } = this.state;
+    const filteredData = notesData.filter((e) => e.id !== id);
+    this.setState({ notesData: filteredData });
+    localStorage.setItem("savedNotes", JSON.stringify(filteredData));
+  };
+
   render() {
     const { newNote, notesData } = this.state;
     return (
       <div className="app-container">
-        <img
-          src="https://cdn.pixabay.com/photo/2016/03/27/23/11/post-it-notes-1284667_640.jpg"
-          alt="banner-img"
-          className="banner-image"
-        />
         <textarea
           value={newNote}
           onChange={this.updateStateInput}
           className="notes-input"
           rows="5"
-          cols="35"
+          cols="28"
           placeholder="Enter notes"
         />
         <button type="button" onClick={this.appendData} className="add-button">
           Add Notes
         </button>
+        <button type="button" onClick={this.saveData} className="add-button">
+          Save Notes
+        </button>
         <ul className="list-of-notes">
           {notesData.map((each) => {
-            return <NotesItem key={each.id} note={each.note} />;
+            return (
+              <NotesItem
+                key={each.id}
+                deleteNote={this.deleteNote}
+                noteData={each}
+              />
+            );
           })}
         </ul>
       </div>

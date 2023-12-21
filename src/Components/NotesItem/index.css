@@ -1,8 +1,14 @@
-.note-item {
-  width: 90%;
-  padding: 10px;
-  border: none;
-  box-shadow: 0px 8px 20px rgb(156, 120, 120);
-  margin-bottom: 10px;
+.note-text {
+  border: 1px solid rgb(207, 156, 156);
+  min-height: 100px;
+
+  text-overflow: ellipsis;
+
+  width: 200px;
+  overflow: wrap;
+  padding: 20px;
   border-radius: 10px;
+  word-wrap: break-word;
+  margin: 10px;
+  background-color: rgb(145, 185, 219);
 }

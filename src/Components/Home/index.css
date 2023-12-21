@@ -1,17 +1,18 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
+  min-height: 100vh;
+  width: 90%;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(219, 119, 136),
+    rgba(243, 172, 39, 0.726),
+    rgb(227, 245, 125)
+  );
 }
 
-.banner-image {
-  height: 200px;
-  width: 92%;
-  border: none;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
 .notes-input {
   border-radius: 10px;
   padding: 10px;
@@ -19,7 +20,9 @@
   color: blueviolet;
   font-size: 18px;
   font-weight: 600;
+  max-width: 90%;
 }
+
 .add-button {
   padding: 10px 15px 10px 15px;
   background-color: blueviolet;
@@ -30,7 +33,9 @@
   margin: 10px;
 }
 .list-of-notes {
-  width: 100%;
+  width: 90%;
   padding-left: 0;
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
 }
